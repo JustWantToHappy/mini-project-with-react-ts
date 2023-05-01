@@ -9,11 +9,12 @@
     "module": "ESNext",
     "skipLibCheck": true,
     /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    //"allowImportingTsExtensions": true,
+    "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "strictFunctionTypes": false,
+    "esModuleInterop":true, //允许export =导出，由import from 导入
     "noImplicitThis": false,
     "isolatedModules": true,
     "noEmit": true,

@@ -38,10 +38,11 @@ export default function Home() {
           个人的审美能力，哈哈哈，编不下去了，总之就是为了好玩。。。
         </p>
       </div>
-      <div className="home-"></div>
+      <div className="home-">
+      </div>
       <ul className="home-demo-links">
         {routes.map((route, index) => <li key={route}>
-          <span>{index+1}.&nbsp;</span>
+          <span>{index + 1}.&nbsp;</span>
           <Link to={route} target="_blank">{route}</Link>
         </li>)}
       </ul>

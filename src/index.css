@@ -7,16 +7,18 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   /* 自定义变量 */
+
+  /* 按钮样式 */
   --primary-light: #8abdff;
   --primary: #6d5dfc;
   --primary-dark: #5b0eeb;
-  
   --border-bg:#d4d4d4;
   --white: #FFFFFF;
   --greyLight-1: #E4EBF5;
   --greyLight-2: #c8d0e7;
   --greyLight-3: #bec8e4;
   --greyDark: #9baacf;
+  
 }
 *{
   padding:0;
@@ -25,4 +27,15 @@
 }
 body{
   background-color: #fff;
+  width:100%;
+  overflow-x: hidden;
+}
+button{
+  cursor: pointer;
+}
+button:focus{
+  outline:none;
+}
+input:focus{
+  outline: none;
 }

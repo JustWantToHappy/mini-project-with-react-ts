@@ -1,15 +1,27 @@
 import React from "react";
-import throttle from "../utils/throttle";
+/**
+ * 节流Hook
+ */
+type ThrottleCallback = (...args:any) => void;
 
-interface ThrottleOptions{
-  delay: number;
-  deps?: [];
-}
+export function useThrottle(callback:ThrottleCallback,delay=100) {
+  //记录上一次时间戳
+  const preTime= React.useRef<number>(0);
 
-type ThrottleCallback = (...args:any[]) => void;
+  React.useEffect(() => {
+    preTime.current = Date.now();
+  }, [delay, callback]);
+  
+  const throttledCallback = React.useCallback((...args: any) => {
+    const that = this as any;
+    if (Date.now() - preTime.current < delay) {
+      return;
+    }
+    preTime.current = new Date().getTime();
+    setTimeout(() => {
+      callback.call(that, ...args);
+    }, delay);
+  }, []);
 
-export function useThrottle(callback:ThrottleCallback,ops:ThrottleOptions) {
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const  throttledCallback = React.useMemo(()=>throttle(callback,ops.delay),ops.deps);
-  return [throttledCallback];
-} 
+  return throttledCallback
+}   
