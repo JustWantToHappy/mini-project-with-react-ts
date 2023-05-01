@@ -8,6 +8,7 @@ const btnStyle = css`
 `;
 
 const StyleDiv = styled('div')`
+  width:100%;
   .circle {
     &_container{
       position:fixed;
@@ -34,17 +35,17 @@ const StyleDiv = styled('div')`
     height: 200px;
     width: 200px;
     border-radius: 50%;
-    position: relative;
     transition: transform 0.5s linear;
   }
 
 
   .container{
-    transition: transform 300ms linear;
+    transition: transform .4s linear;
     transform-origin:top left;
     width:100%;
     min-height:100vh;
     padding:50px;
+    background-color: #fff;
   }
   //文章内容rotate
   .container.show-nav{
@@ -73,22 +74,34 @@ const StyleDiv = styled('div')`
     }
   }
   nav{
-    /*position: absolute;
-    z-index:-1;
-    background-color: #ff7979;
-    transform-origin: top left;
-    transform: rotate(90deg);*/
+    position:fixed;
+    bottom:40px;
+    left:0;
+    z-index:100;
     ul{
-      list-style-type: none;
-    }
-    a{
-      text-decoration: none;
-      color: #fff;
+      list-style: none;
+      padding-left:30px;
+      li{
+        margin:40px 0;
+        transform: translateX(-200%);
+        transition: transform .4s ease-in;
+        a{
+          color:#fff;
+          text-decoration: none;
+        }
+      }
     }
   }
   .show-nav~nav{
-    /*position: fixed;*/
-    /*transform: rotate(-90deg);*/
+    ul>li:nth-of-type(1){
+      transform: translateX(75%);
+    }
+    ul>li:nth-of-type(2){
+      transform: translateX(85%);
+    }
+    ul>li:nth-of-type(3){
+      transform: translateX(95%);
+    }
   }
 `
 

@@ -12,6 +12,12 @@ export default function Index() {
     });
   }
 
+  React.useEffect(() => {
+    document.body.style.background = "#333333";
+    return function () {
+      document.body.style.background = "#fff";
+    }
+  }, []);
   return (
     <StyleDiv>
       <div className={!open ? "container" : "container show-nav"}>
