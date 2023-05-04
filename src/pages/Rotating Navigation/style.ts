@@ -94,13 +94,13 @@ const StyleDiv = styled('div')`
   }
   .show-nav~nav{
     ul>li:nth-of-type(1){
-      transform: translateX(75%);
+      transform: translateX(50%);
     }
     ul>li:nth-of-type(2){
-      transform: translateX(85%);
+      transform: translateX(75%);
     }
     ul>li:nth-of-type(3){
-      transform: translateX(95%);
+      transform: translateX(85%);
     }
   }
 `

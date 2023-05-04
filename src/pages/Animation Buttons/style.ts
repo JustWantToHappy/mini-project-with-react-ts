@@ -282,6 +282,70 @@ const StyleDiv = styled('div')<StyleProps>`
       transition: all 300ms ease;
     }
   }
+  /* 圆圈无限波纹按钮 */
+  .circle{
+    height:8rem;
+    display:flex;
+    justify-content: center;
+    position:relative;
+    &_btn{
+      width:6rem;
+      height:6rem;
+      border-radius: 50%;
+      font-size:3.2rem;
+      color:var(--primary);
+      background-color: var(--greyLight-2);
+      display:flex;
+      justify-content: center;
+      align-items:center;
+      cursor: pointer;
+      box-shadow: rgba(255, 255, 255, 1) 0px 5px 15px;
+      position:absolute;
+      z-index:300;
+    }
+    .play{
+      position:absolute;
+      opacity: 0;
+      transition:all .2s linear;
+    }
+    .pause{
+      position:absolute;
+      transition:all .2s linear;
+    }
+    &_back_1,&_back_2{
+      width:6rem;
+      height:6rem;
+      border-radius:50%;
+      filter:blur(1px);
+      z-index:100;
+      position:absolute;
+      z-index:200;
+    }
+    &_back_1{
+      box-shadow: .4rem .4rem .8rem var(--greyLight-2), 
+    -.4rem -.4rem .8rem var(--white);
+    background: linear-gradient(to bottom right, var(--greyLight-2) 0%, var(--white) 100%);
+    animation: waves 4s linear infinite;
+    }
+    &_back_2{
+      box-shadow: .4rem .4rem .8rem var(--greyLight-2), 
+    -.4rem -.4rem .8rem var(--white);
+    animation: waves 4s linear 2s infinite;
+    }
+  }
+  @keyframes waves{
+    0%{
+      transform: scale(1);
+      opacity:1
+    }
+    50%{
+      opacity: 1;
+    }
+    100%{
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
 `
 
 export default StyleDiv

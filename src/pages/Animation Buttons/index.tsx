@@ -1,6 +1,7 @@
 import React from 'react'
 import StyleDiv from './style'
 import SearchSvg from "../../assets/svg/search.svg";
+
 let drag = false;
 
 export default function Index() {
@@ -16,6 +17,8 @@ export default function Index() {
   const searchBtn = React.useRef<HTMLInputElement>(null);
   //搜索输入框
   const searchInputRef = React.useRef<HTMLInputElement>(null);
+  //暂停还是播放
+  const [play, setPlay] = React.useState(true);
 
   const handleMouseDown = () => {
     drag = true;
@@ -118,6 +121,15 @@ export default function Index() {
         <label htmlFor='search_input_focus' onClick={searchInputFocus} className="search_btn">
           <img src={SearchSvg} />
         </label>
+      </div>
+      <div className="circle">
+        <span className="circle_btn">
+          <i className="pause"></i>
+          <i className="play"></i>
+          <i></i>
+        </span>
+        <span className="circle_back_1"></span>
+        <span className="circle_back_2"></span>
       </div>
     </StyleDiv>
   )
