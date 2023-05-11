@@ -6,13 +6,12 @@ type ThrottleCallback = (...args:any) => void;
 
 export function useThrottle(callback:ThrottleCallback,delay=100) {
   //记录上一次时间戳
-  const preTime= React.useRef<number>(0);
-
+  const preTime = React.useRef<number>(0);
   React.useEffect(() => {
     preTime.current = Date.now();
-  }, [delay, callback]);
+  }, [delay]);
   
-  const throttledCallback = React.useCallback((...args: any) => {
+  const throttledCallback = React.useCallback(function(...args:any) {
     const that = this as any;
     if (Date.now() - preTime.current < delay) {
       return;
@@ -21,7 +20,7 @@ export function useThrottle(callback:ThrottleCallback,delay=100) {
     setTimeout(() => {
       callback.call(that, ...args);
     }, delay);
-  }, []);
+  }, [callback]);
 
   return throttledCallback
 }   

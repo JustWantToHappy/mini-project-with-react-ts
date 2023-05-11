@@ -24,6 +24,7 @@ function App() {
     const url = decodeURIComponent(location.pathname);
     const wholeURL = "./pages" + url + "/index.tsx";
     if (pages[wholeURL]) {
+      document.title = url.substring(1);
       import(wholeURL).then(module => {
         FC.current = module.default;
         setCurrentURL(url);
