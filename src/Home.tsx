@@ -10,13 +10,24 @@ const HomeBox = styled("div")`
     margin-top:.5rem;
     width:70%;
   }
+  @media screen and (max-width:768px){
+    *{
+      width:90%;
+    }
+    h1{
+      font-size:1.5rem;
+    }
+  }
   .home-introduce{
     &>h1{
       text-align: center;
+      white-space: nowrap;
     }
     &>p{
       line-height: 1.5rem;
       text-indent: 2rem;
+      text-align: justify;
+      letter-spacing: 1px;
     }
   }
   .home-demo-links{
