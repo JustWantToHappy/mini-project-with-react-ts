@@ -26,8 +26,8 @@ const StyleDiv = styled('div')`
     overflow: hidden;
     margin:20px auto;
     padding:30px;
-    position: relative;
     transition:.3s ease;
+    position: relative;
   }
   /* 激活之后的Collapse中的背景 */
   .faq.active::before,.faq.active::after{
@@ -49,8 +49,7 @@ const StyleDiv = styled('div')`
   }
   .faq-title{
     margin-bottom:35px;
-    background-color: red;
-    position:relative;
+    font-size:1rem;
   }
 
   .faq-text{
@@ -60,6 +59,37 @@ const StyleDiv = styled('div')`
   /*只有激活的Collapse才可以显示文字 */
   .faq.active .faq-text {
     display: block;
+  }
+
+  .faq-toggle{
+    background-color: transparent;
+    border:0;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:16px;
+    position: absolute;
+    padding:0;
+    top:30px;
+    right:30px;
+    height:30px;
+    width:30px;
+  }
+  .faq.active .faq-toggle{
+    background-color: #9fa4a8;
+    color:#fff;
+  }
+  .faq.active .icon-xiangxia{
+    display:none;
+  }
+  
+  .faq .icon-esc{
+    display:none;
+  }
+  .faq.active .icon-esc{
+    display:block;
   }
 
 
