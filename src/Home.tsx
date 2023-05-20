@@ -5,6 +5,11 @@ import styled from "styled-components";
 
 const HomeBox = styled("div")`
   width:100%;
+  overflow: hidden;
+  background: #403B4A;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #E7E9BB, #403B4A);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #E7E9BB, #403B4A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #fff;
   *{
     margin:0 auto;
     margin-top:.5rem;
@@ -24,6 +29,7 @@ const HomeBox = styled("div")`
       white-space: nowrap;
     }
     &>p{
+      font-size:.8rem;
       line-height: 1.5rem;
       text-indent: 2rem;
       text-align: justify;
@@ -34,6 +40,12 @@ const HomeBox = styled("div")`
     list-style: none;
     margin-top:2rem;
     line-height: 2rem;
+  }
+  a{
+    color: #531616;
+    &:hover{
+      color:#fff;
+    }
   }
 `;
 
@@ -48,8 +60,6 @@ export default function Home() {
           个人在各大设计网站上和codepen上博主的作品,目的是为了巩固react+ts+css的使用,同时为了提高
           个人的审美能力，哈哈哈，编不下去了，总之就是为了好玩。。。
         </p>
-      </div>
-      <div className="home-">
       </div>
       <ul className="home-demo-links">
         {routes.map((route, index) => <li key={route}>
