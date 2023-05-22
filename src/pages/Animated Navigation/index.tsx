@@ -11,9 +11,10 @@ export default function Index() {
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
-        <label htmlFor="trigger">
-          <i className="iconfont icon-esc"></i>
-          <i className="iconfont icon-shijian"></i>
+        <label htmlFor="trigger" className="lines">
+          <i className="line line1"></i>
+          <i className="line line2"></i>
+          <i></i>
         </label>
       </nav>
     </StyleDiv>

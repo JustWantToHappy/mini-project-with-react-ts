@@ -2,14 +2,14 @@ import styled from 'styled-components'
 
 const StyleDiv = styled('div')`
   min-height: 100vh;
-  background-color: #eafbff;
+  /*background-color: #eafbff;
   background-image: linear-gradient(
     to bottom,
     #eafbff 0%,
     #eafbff 50%,
     #5290f9 50%,
     #5290f9 100%
-  );
+  );*/
   display:flex;
   justify-content: center;
   align-items: center;
@@ -22,8 +22,7 @@ const StyleDiv = styled('div')`
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    
+    /*overflow: hidden;*/
     padding:2rem 1rem;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
@@ -53,26 +52,46 @@ const StyleDiv = styled('div')`
         color:#000;
       }
     }
+  }
+  .lines{
+    position:relative;
+    margin-left:1rem;
+    display: flex;
+  }
+  .line{
+    display: inline-block;
+    background-color: #5290f9;
+    width:3px;
+    height:30px;
+    cursor: pointer;
+  }
 
-    label{
-      transition: all .3s ease;
-    }
+  .line1{
+    position: absolute;
+    transform: rotate(45deg) translateY(0);
+    transition: transform 300ms linear;
+  }
+  
+  .line2{
+    transform: rotate(-45deg) translateY(0);
+    transition: transform 300ms linear;
   }
 
   .trigger:checked~.active{
-    width:100px;
+    width:200px;
   }
   .trigger:checked~.active>ul>li{
     transform:rotateY(360deg);
     opacity: 0;
-  }
-  
-  .trigger:checked~.active>label>.icon-esc{
     display: none;
   }
-  .trigger:checked~.active>label>.icon-biaoqing{
-    display: block;
-    transform: translateX(-125px);
+  
+  
+  .trigger:checked~.active .line1{
+    transform: rotate(765deg) translateY(-5px);
+  }
+  .trigger:checked~.active .line2{
+    transform: rotate(-765deg) translateY(5px);
   }
   
 `
