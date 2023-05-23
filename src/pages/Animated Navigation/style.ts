@@ -59,6 +59,7 @@ const StyleDiv = styled('div')`
     align-items: center;
     width:2rem;
     height:30px;
+    
   }
   .line{
     display: inline-block;
@@ -70,11 +71,14 @@ const StyleDiv = styled('div')`
 
   .line1{
     position: absolute;
+    z-index:1;
     transform: translate(0,0) rotate(45deg);
     transition: transform 300ms linear;
   }
   
   .line2{
+    position: absolute;
+    z-index:1;
     transform:translate(0) rotate(-45deg);
     transition: transform 300ms linear;
   }
