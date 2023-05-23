@@ -40,11 +40,17 @@ const HomeBox = styled("div")`
     list-style: none;
     margin-top:2rem;
     line-height: 2rem;
+    span{
+      font-size:1rem;
+      margin-right:1rem;
+    }
   }
   a{
     color: #531616;
     &:hover{
       color:#fff;
+      text-decoration: underline;
+      text-underline-offset: 5px;
     }
   }
 `;
@@ -58,7 +64,7 @@ export default function Home() {
         <p>
           这是一个有趣的mini项目,有一些有用好看的demo,结合了50projects50days的部分项目以及
           个人在各大设计网站上和codepen上博主的作品,目的是为了巩固react+ts+css的使用,同时为了提高
-          个人的审美能力，哈哈哈，编不下去了，总之就是为了好玩。。。
+          个人的审美能力(css强迫症得治一下了。。。),前期使用css-in-js管理样式,后来接触了tailwindcss之后就打算使用tailwindcss了。
         </p>
       </div>
       <ul className="home-demo-links">

@@ -2,18 +2,18 @@ import styled from 'styled-components'
 
 const StyleDiv = styled('div')`
   min-height: 100vh;
-  /*background-color: #eafbff;
+  background-color: #eafbff;
   background-image: linear-gradient(
     to bottom,
     #eafbff 0%,
     #eafbff 50%,
     #5290f9 50%,
     #5290f9 100%
-  );*/
+  );
   display:flex;
   justify-content: center;
   align-items: center;
-
+  
   .active{
     width:325px;
     height:2rem;
@@ -22,9 +22,8 @@ const StyleDiv = styled('div')`
     display: flex;
     align-items: center;
     justify-content: center;
-    /*overflow: hidden;*/
     padding:2rem 1rem;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
     .icon-esc{
       color: #5290f9;
@@ -54,44 +53,46 @@ const StyleDiv = styled('div')`
     }
   }
   .lines{
-    position:relative;
     margin-left:1rem;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width:2rem;
+    height:30px;
   }
   .line{
     display: inline-block;
     background-color: #5290f9;
     width:3px;
-    height:30px;
+    height:28px;
     cursor: pointer;
   }
 
   .line1{
     position: absolute;
-    transform: rotate(45deg) translateY(0);
+    transform: translate(0,0) rotate(45deg);
     transition: transform 300ms linear;
   }
   
   .line2{
-    transform: rotate(-45deg) translateY(0);
+    transform:translate(0) rotate(-45deg);
     transition: transform 300ms linear;
   }
 
   .trigger:checked~.active{
-    width:200px;
+    width:100px;
   }
   .trigger:checked~.active>ul>li{
     transform:rotateY(360deg);
     opacity: 0;
-    display: none;
   }
   
   
   .trigger:checked~.active .line1{
-    transform: rotate(765deg) translateY(-5px);
+    transform: translate(-132px,-5px) rotate(630deg);
   }
   .trigger:checked~.active .line2{
-    transform: rotate(-765deg) translateY(5px);
+    transform: translate(-132px,5px) rotate(-630deg);
   }
   
 `
