@@ -1,7 +1,5 @@
 /* 导入按钮的基础样式 */
 @import url(assets/styles/btn.css);
-/* 导入导航按钮的基础样式 */
-@import url(assets/styles/nav-item.css);
 /* 用来注入tailwind的基础样式，tailwind预设，
   旨在消除浏览器的不一致性
   但是这会导致：
@@ -13,8 +11,6 @@
   6. 边框样式被全局重置
  */
 @tailwind base;
-/* 用于注册tailwind的组件类 */
-@tailwind components;
 @tailwind utilities;
 
 /* 用于扩展预设 */
@@ -27,9 +23,6 @@
   }
   h3 {
     @apply text-lg;
-  }
-  span{
-    @apply text-xs;
   }
 }
 

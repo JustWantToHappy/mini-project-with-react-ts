@@ -1,6 +1,0 @@
-.nav-item{
-  @apply text-white text-xs hover:text-orange font-semibold;
-}
-.nav-logo{
-  @apply h-8;
-}
