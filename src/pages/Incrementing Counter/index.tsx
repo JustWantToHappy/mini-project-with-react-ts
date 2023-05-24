@@ -19,6 +19,11 @@ export default function Index() {
         setTimeout(() => {
           updater(counter, maxCount, currentCount + Math.floor(maxCount / 200));
         }, 1);
+      } else {
+        setCount(count => {
+          count[counter] = maxCount;
+          return { ...count };
+        })
       }
     }
     updater("twitter", 12000);
