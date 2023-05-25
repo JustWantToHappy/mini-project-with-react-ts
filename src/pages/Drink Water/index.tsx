@@ -63,7 +63,7 @@ export default function Index() {
           key={index}
           data-id={index}
           style={{ backgroundColor: selectedWaters.includes(index + "") ? "#3494e4" : "", color: selectedWaters.includes("" + index) ? "#fff" : "" }}
-          className={cupClass + "h-[10rem] transition-bg ease duration-100 w-[50px] rounded-b-xl cursor-pointer text-center m-[5px] items-center justify-center p-4"}
+          className={cupClass + "h-[6rem] transition-bg ease duration-100 w-[50px] rounded-b-xl cursor-pointer text-center m-[5px] items-center justify-center p-4"}
           ref={current => cups.current.push({ id: index, current: current as HTMLDivElement })}
         >
           {liters} ml
