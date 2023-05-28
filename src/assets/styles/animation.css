@@ -1,0 +1,41 @@
+@keyframes slider-move{
+  0%{
+    transform: translateX(0);
+    display: block;
+  }
+  15%{
+    transform: translateX(0%); 
+  }
+  20%{
+    transform: translateX(-20%);
+  }
+  35%{
+    transform: translateX(-20%);
+  }
+  40%{
+    transform: translateX(-40%);
+  }
+  55%{
+    transform: translateX(-40%);
+  }
+  60%{
+    transform: translateX(-60%);
+  }
+  75%{
+    transform: translateX(-60%);
+  }
+  80%{
+    transform: translateX(-80%);
+  }
+  99.9%{
+    transform: translateX(-80%);
+    display: block;
+  }
+  100%{
+    display: none;
+    transform: translateX(0);
+  }
+}
+.animate-slider-move{
+  animation: slider-move 10s linear infinite;
+}

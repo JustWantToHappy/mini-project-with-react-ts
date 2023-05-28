@@ -15,21 +15,14 @@ const HomeBox = styled("div")`
     margin-top:.5rem;
     width:70%;
   }
-  @media screen and (max-width:768px){
-    *{
-      width:90%;
-    }
-    h1{
-      font-size:1.5rem;
-    }
-  }
   .home-introduce{
     &>h1{
       text-align: center;
       white-space: nowrap;
+      font-size:2rem;
+      margin-bottom: 1rem;
     }
     &>p{
-      font-size:.8rem;
       line-height: 1.5rem;
       text-indent: 2rem;
       text-align: justify;
@@ -53,6 +46,12 @@ const HomeBox = styled("div")`
       text-underline-offset: 5px;
     }
   }
+  @media screen and (max-width:768px){
+    div{
+      width:90%;
+    }
+  }
+  
 `;
 
 export default function Home() {

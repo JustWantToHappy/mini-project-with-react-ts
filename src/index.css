@@ -1,17 +1,20 @@
 /* 导入按钮的基础样式 */
 @import url(assets/styles/btn.css);
+/* 导入动画 */
+@import url(assets/styles/animation.css);
 /* 用来注入tailwind的基础样式，tailwind预设，
-  旨在消除浏览器的不一致性
-  但是这会导致：
-  1. 默认外边距被移除
-  2. 标题没有样式
-  3. 列表没有样式
-  4. 图片是块级元素
-  5. 按钮默认有轮廓
-  6. 边框样式被全局重置
- */
+旨在消除浏览器的不一致性
+但是这会导致：
+1. 默认外边距被移除
+2. 标题没有样式
+3. 列表没有样式
+4. 图片是块级元素
+5. 按钮默认有轮廓
+6. 边框样式被全局重置
+*/
 @tailwind base;
 @tailwind utilities;
+/*@tailwind components;*/
 
 /* 用于扩展预设 */
 @layer base{
@@ -25,6 +28,22 @@
     @apply text-lg;
   }
 }
+/* 用于定义样式组件 */
+/*@layer components{
+  .sb{
+    background:red;
+  }
+}*/
+/* 不局限于基础样式，用来定义原子级别的样式 */
+@layer utilities{
+  比如你看base提供的基础样式不顺眼，就可以在这里面修改
+  .rounded{
+    border-radius:50%;
+  }
+  
+}
+
+
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
