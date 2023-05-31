@@ -50,6 +50,14 @@ const HomeBox = styled("div")`
     div{
       width:90%;
     }
+    .home-introduce{
+      &>p{
+        font-size: .9rem;
+      }
+      &>h1{
+        font-size:1.2rem;
+      }
+    }
   }
   
 `;
@@ -61,7 +69,7 @@ export default function Home() {
       <div className="home-introduce">
         <h1>interesting-component-demos</h1>
         <p>
-          这是一个有趣的mini项目,有一些有用好看的demo,结合了50projects50days的部分项目以及
+          这是一个有趣的mini项目,有一些有用好看的demo,结合了50projects50days的项目以及
           个人在各大设计网站上和codepen上博主的作品,目的是为了巩固react+ts+css的使用,同时为了提高
           个人的审美能力(css强迫症得治一下了。。。),前期使用css-in-js管理样式,后来接触了tailwindcss之后就打算使用tailwindcss啦,使用tailwindcss的
           初衷也是为了在后面的项目中快速上手tailwind。哈哈哈，实际上就是为了偷懒。
