@@ -36,11 +36,10 @@
 }*/
 /* 不局限于基础样式，用来定义原子级别的样式 */
 @layer utilities{
-  比如你看base提供的基础样式不顺眼，就可以在这里面修改
+  /*比如你看base提供的基础样式不顺眼，就可以在这里面修改*/
   .rounded{
     border-radius:50%;
   }
-  
 }
 
 
@@ -65,7 +64,6 @@
   --greyLight-2: #c8d0e7;
   --greyLight-3: #bec8e4;
   --greyDark: #9baacf;
-  
 }
 *{
   padding:0;
