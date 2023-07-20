@@ -38,7 +38,9 @@ const Index = () => {
 
   return (
     <div className="w-screen h-screen overflow-hidden text-white">
-      <div className={`w-[35%] h-full float-left -translate-y-[${translateY}vh] transition-all duration-300 linear`}>
+      <div
+        style={{ transform: `translateY(-${translateY}vh)` }}
+        className="w-[35%] h-full float-left transition-all duration-300 linear">
         {items.map(item => <div key={item.title}
           className="h-full flex justify-center items-center flex-col"
           style={{ backgroundColor: item.bg }}>
@@ -46,7 +48,9 @@ const Index = () => {
           <p>{item.desc}</p>
         </div>)}
       </div>
-      <div className={`w-[65%] h-full float-right -translate-y-[${300 - translateY}vh] transition-all duration-300 linear`}>
+      <div
+        style={{ transform: `translateY(-${300 - translateY}vh)` }}
+        className="w-[65%] h-full float-right  transition-all duration-300 linear">
         {items.map(item => <div
           style={{ backgroundImage: `url(${item.imageUrl})` }}
           className='w-full h-full bg-cover'
