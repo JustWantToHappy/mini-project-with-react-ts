@@ -1,5 +1,5 @@
 /* 导入按钮的基础样式 */
-@import url(assets/styles/btn.css);
+/*@import url(assets/styles/btn.css);*/
 /* 导入动画 */
 @import url(assets/styles/animation.css);
 /* 用来注入tailwind的基础样式，tailwind预设，
