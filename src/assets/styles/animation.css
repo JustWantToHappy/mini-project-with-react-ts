@@ -39,3 +39,54 @@
 .animate-slider-move{
   animation: slider-move 10s linear infinite;
 }
+
+
+@keyframes show {
+  0%{
+    transform: scale(0);
+  }
+  30%{
+    transform: scale(1.4);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+.animate-replay-show{
+  animation:show .2s ease-out;
+}
+
+@keyframes goIn {
+  0%{
+    transform:rotate(120deg);
+  }
+  30%{
+    transform: rotate(-20deg);
+  }
+  60%{
+    transform: rotate(10deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
+.animate-num-in{
+  transform-origin: bottom center;
+  animation:goIn .5s ease-in;
+}
+
+@keyframes goOut {
+  0%{
+    transform: rotate(0deg);
+  }
+  60%{
+    transform: rotate(20deg);
+  }
+  100%{
+    transform: rotate(-120deg);
+  }
+}
+.animate-num-out{
+  transform-origin: bottom center;
+  animation: goOut .5s ease-in;
+}
