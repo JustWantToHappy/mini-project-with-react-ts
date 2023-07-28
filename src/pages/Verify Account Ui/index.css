@@ -1,0 +1,16 @@
+/* 隐藏Spin按钮和滚动条 */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* 防止移动端出现默认样式 */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* 禁用滚动条 */
+input[type='number'] {
+  overflow: hidden;
+}
