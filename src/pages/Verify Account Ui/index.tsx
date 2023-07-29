@@ -17,6 +17,9 @@ const Index = () => {
     if (e.target.value !== '' && index + 1 < length) {
       const nextCode = codeContainerRef.current?.children[index + 1] as HTMLInputElement;
       nextCode?.focus()
+    } else if (e.target.value !== '' && index + 1 === length) {
+      const code = codeContainerRef.current?.children[index] as HTMLInputElement;
+      code.blur();
     }
     if (!codes.includes(index)) {
       setCodes(codes => [...codes, index])
