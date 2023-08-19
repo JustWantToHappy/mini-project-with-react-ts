@@ -40,6 +40,10 @@ const Index = () => {
     }
   }
 
+  React.useEffect(() => {
+    window.oncontextmenu = e => e.preventDefault()
+  }, [])
+
   return (
     <div className='bg-[#f5f5f5] text-[#444] flex items-center min-h-screen justify-center flex-col'>
       <h1 className='text-[rgba(179,131,226)] text-[10rem] opacity-40 mb-28 mt-12'>todos</h1>

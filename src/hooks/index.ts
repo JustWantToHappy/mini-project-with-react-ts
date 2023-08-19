@@ -20,7 +20,22 @@ export function useThrottle(callback:ThrottleCallback,delay=100) {
     setTimeout(() => {
       callback.call(that, ...args);
     }, delay);
-  }, [callback]);
+  }, [callback,delay]);
 
   return throttledCallback
 }   
+
+
+export function useDebouce<CallBack extends (...args:unknown[])=>unknown>(fn:CallBack,delay:number) {
+  const timerRef = React.useRef<number>();
+
+  const debouceFn = React.useCallback((...args1:unknown[]) => {
+    if(timerRef.current) clearTimeout(timerRef.current)  
+    timerRef.current=setTimeout(() => {
+      const result = fn.apply(this, args1);
+      return result;
+    }, delay);
+  }, [delay, fn]);
+  
+  return debouceFn;
+}
