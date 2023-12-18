@@ -57,14 +57,15 @@ export default function Index() {
   }, []);
 
   React.useEffect(() => {
-    createContext();
-    canvas.current?.addEventListener("mousedown", handleMouseDown);
-    canvas.current?.addEventListener("mousemove", handleMouseMove);
-    canvas.current?.addEventListener("mouseup", handleMouseUp);
+		createContext();
+		const canvasCurrent = canvas.current;
+    canvasCurrent?.addEventListener("mousedown", handleMouseDown);
+    canvasCurrent?.addEventListener("mousemove", handleMouseMove);
+    canvasCurrent?.addEventListener("mouseup", handleMouseUp);
     return function () {
-      canvas.current?.removeEventListener("mousedown", handleMouseDown);
-      canvas.current?.removeEventListener("mousemove", handleMouseMove);
-      canvas.current?.removeEventListener("mouseup", handleMouseUp);
+      canvasCurrent?.removeEventListener("mousedown", handleMouseDown);
+      canvasCurrent?.removeEventListener("mousemove", handleMouseMove);
+      canvasCurrent?.removeEventListener("mouseup", handleMouseUp);
     }
   }, [handleMouseDown, handleMouseMove, handleMouseUp]);
 

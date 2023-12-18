@@ -8,7 +8,6 @@ export default function Index() {
   const dragsRef = React.useRef<Array<HTMLDivElement>>([]);
 
   React.useEffect(() => {
-
     const handleDrop = (event: MouseEvent) => {
       const id = (event.currentTarget as HTMLDivElement).dataset.id as string;
       setActive(parseInt(id));
@@ -20,7 +19,6 @@ export default function Index() {
       event.preventDefault();
       const id = (event.currentTarget as HTMLDivElement).dataset.id as string;
       setHover(parseInt(id));
-
     }
 
     const handleDragLeave = () => {
