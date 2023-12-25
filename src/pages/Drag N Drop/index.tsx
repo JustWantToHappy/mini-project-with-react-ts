@@ -48,11 +48,9 @@ export default function Index() {
   React.useEffect(() => {
     const handleDragStart = () => {
       setHold(true);
-      console.info("start")
     };
     const handleDragEnd = () => {
       setHold(false);
-      console.info("end");
     };
 
     fillRef.current?.addEventListener("dragstart", handleDragStart)

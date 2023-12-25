@@ -1,33 +1,50 @@
 import React from 'react'
 
 const Index = () => {
-  const isDragRef = React.useRef(false)
+	const isDragRef = React.useRef(false)
+	const asideRef = React.useRef<HTMLElement>(null);
 
-  const handleDragStart = () => {
-    isDragRef.current = true
-  }
-  const handleDrag = () => {
+	const handleMouseDown = () => {
+		isDragRef.current = true
+	}
 
-  }
+	React.useEffect(() => {
+		const handleMouseMove = (event: MouseEvent) => {
+			event.preventDefault()
+			if (asideRef.current && isDragRef.current) {
+				document.documentElement.style.cursor="ew-resize"
+				asideRef.current.style.width=`${event.clientX-10}px`
+			}
+		}
+		const handleMouseUp = () => {
+			isDragRef.current = false
+			document.documentElement.style.cursor="auto"
+		}
 
-  const handleDragEnd = () => {
-    isDragRef.current = false
-  }
-
+		document.documentElement.addEventListener("mousemove",handleMouseMove)
+		document.documentElement.addEventListener("mouseup",handleMouseUp)
+		return function () {
+			document.documentElement.removeEventListener("mousemove",handleMouseMove)
+			document.documentElement.removeEventListener("mouseup",handleMouseUp)
+		}
+	}, [])
+	
   return (
-    <div className='h-screen flex w-full'>
-      <aside className=' bg-slate-200 min-w-[50px]'>
-        aside
+		<div className='h-screen  w-full bg-[#f4f5f5] px-2'>
+			<nav className='h-12 flex items-center'>这是导航栏</nav>
+			<div className="flex" style={{height:"calc(100vh - 3rem)"}}>
+				<aside className='py-2 w-10' ref={ asideRef} style={{minWidth:100}}>
+				<div className="bg-white h-full rounded-lg p-1 border border-gray-200">aside</div>
       </aside>
-      <div
-        onDragStart={handleDragStart}
-        onDrag={handleDrag}
-        onDragEnd={handleDragEnd}
-        className=' cursor-ew-resize w-[4px] bg-slate-50 hover:bg-blue-300'>
+				<div
+					onMouseDown={handleMouseDown}
+					className='hover:cursor-ew-resize w-2 py-2 flex items-center justify-center group'>
+					<div className='w-[2px] h-full group-hover:bg-[#005bda] group-hover:cursor-ew-resize'></div>
       </div>
-      <main className=' bg-slate-600 flex-1 min-w-[50px]'>
-        main
+      <main className=' flex-1 py-2' style={{minWidth:100}}>
+				<div className="bg-white h-full border border-gray-200 rounded-lg p-2">main</div>
       </main>
+			</div>
     </div>
   )
 }

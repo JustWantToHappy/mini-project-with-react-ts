@@ -2,24 +2,23 @@ import React from "react";
 /**
  * 节流Hook
  */
-type ThrottleCallback = (...args:any) => void;
+type ThrottleCallback = (...args:unknown[]) => void;
 
 export function useThrottle(callback:ThrottleCallback,delay=100) {
   //记录上一次时间戳
   const preTime = React.useRef(0);
-  React.useEffect(() => {
-    preTime.current = Date.now();
-  }, [delay]);
-  
-  const throttledCallback = React.useCallback(function(...args:any) {
-    const that = this as any;
-    if (Date.now() - preTime.current < delay) {
-      return;
+
+  const throttledCallback = React.useCallback(function(...args:unknown[]) {
+		let result;
+		const currentTime = Date.now();
+		if (!preTime.current) {
+			preTime.current = currentTime;
+		}
+    if (currentTime- preTime.current >= delay) {
+			result=callback.call(this, ...args);
+			preTime.current=new Date().getTime()
     }
-    preTime.current = new Date().getTime();
-    setTimeout(() => {
-      callback.call(that, ...args);
-    }, delay);
+		return result;
   }, [callback,delay]);
 
   return throttledCallback

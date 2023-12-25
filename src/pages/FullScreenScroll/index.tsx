@@ -8,7 +8,7 @@ const Index = () => {
   const handleWheel = useThrottle((event: React.WheelEvent) => {
     const up = event.deltaY >= 0;//判断是否向上滚动
     setActive(active => up ? Math.min(active + 1, length - 1) : Math.max(0, active - 1));
-  }, 500)
+  }, 1000)
 
 
   return (
